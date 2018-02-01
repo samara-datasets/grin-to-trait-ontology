@@ -10,9 +10,7 @@ java -jar nomer.jar clean
 # when no match is found, an explicit "NONE" is appended along 
 # with the matched term
 
-# note that the gzip business is an attempt to reduce data file to a size
-# that is still accepted by git/ github for archiving purposes
-# probably not a good idea to store big files in github ... but nice
-# to have things in one place
+# please note that records without a GRINTaxon are dropped
+# see https://github.com/jhpoelen/samara/issues/49
 
-curl -sH 'Accept-encoding: gzip' https://build.berkeleybop.org/view/Planteome/job/extract-grin-traits/43/artifact/grin.tsv | tee input/grin.tsv.gz | gunzip | java -Dnomer.term.map.url=file://${PWD}/input/grin-trait-map.tsv -Dnomer.term.cache.url=file://${PWD}/input/traits.tsv -jar nomer.jar append --properties=nomer.properties | gzip > output/grin-mapped.tsv.gz 
+curl -sH 'Accept-encoding: gzip' https://build.berkeleybop.org/view/Planteome/job/extract-grin-traits/43/artifact/grin.tsv | tee input/grin.tsv.gz | gunzip | grep "^GRINTaxon" | java -Dnomer.term.map.url=file://${PWD}/input/grin-trait-map.tsv -Dnomer.term.cache.url=file://${PWD}/input/traits.tsv -jar nomer.jar append --properties=nomer.properties | gzip > output/grin-mapped.tsv.gz 
