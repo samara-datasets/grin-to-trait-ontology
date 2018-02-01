@@ -15,4 +15,4 @@ java -jar nomer.jar clean
 # probably not a good idea to store big files in github ... but nice
 # to have things in one place
 
-curl https://build.berkeleybop.org/view/Planteome/job/extract-grin-traits/lastSuccessfulBuild/artifact/grin.tsv | gzip | tee input/grin.tsv.gz | gunzip | java -Dnomer.term.map.url=file://${PWD}/input/grin-trait-map.tsv -Dnomer.term.cache.url=file://${PWD}/input/traits.tsv -jar nomer.jar append --properties=nomer.properties | gzip | tee output/grin-mapped.tsv.gz 
+curl --silent https://build.berkeleybop.org/view/Planteome/job/extract-grin-traits/lastSuccessfulBuild/artifact/grin.tsv | gzip | tee input/grin.tsv.gz | gunzip | java -Dnomer.term.map.url=file://${PWD}/input/grin-trait-map.tsv -Dnomer.term.cache.url=file://${PWD}/input/traits.tsv -jar nomer.jar append --properties=nomer.properties | gzip > output/grin-mapped.tsv.gz 

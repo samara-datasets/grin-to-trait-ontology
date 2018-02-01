@@ -43,6 +43,6 @@ The file ```output/grin-small-mapped.tsv``` should have been regenerated.
 
 After making sure the test works, you can try to run the mapping of all GRIN descriptors using bbop's copy at https://build.berkeleybop.org/view/Planteome/job/extract-grin-traits/ .
 
-Start the mapping by executing ```./map-grin.sh``` all output is piped to stdout, so your commandline should be quite lively. The input (downloaded from bbop) is saved in ```input/grin.tsv.gz``` and the mapped output is in ```output/grin-mapped.tsv.gz``` .
+Start the mapping by executing ```./map-grin.sh```. The input (downloaded/streamed from bbop) is saved in ```input/grin.tsv.gz``` and the mapped output is in ```output/grin-mapped.tsv.gz``` .
 
 You can have a look at the first 10 lines of the result by doing something like ```cat output/grin-mapped.tsv.gz | head -n 11```.
