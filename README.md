@@ -45,4 +45,6 @@ After making sure the test works, you can try to run the mapping of all GRIN des
 
 Start the mapping by executing ```./map-grin.sh```. The input (downloaded/streamed from bbop) is saved in ```input/grin.tsv.gz``` and the mapped output is in ```output/grin-mapped.tsv.gz``` .
 
-You can have a look at the first 10 lines of the result by doing something like ```cat output/grin-mapped.tsv.gz | head -n 11```.
+You can have a look at the first 10 lines of the result by doing something like ```zcat output/grin-mapped.tsv.gz | head -n 11```.
+
+Now, to identify mapped terms, something ```zcat output/grin-mapped.tsv.gz | grep SAME_AS``` will select all lines with matched GRINDesc terms. To get a list of all unique unmatched terms, awk may be used in combination with sort and uniq like: ```zcat output/grin-mapped.tsv.gz | awk -F '\t' '{print $3 "\t" $4 } | sort | uniq | tee output/grin-unmatched-desc.tsv```
