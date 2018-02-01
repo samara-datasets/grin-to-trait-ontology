@@ -1,5 +1,5 @@
 # grin-to-trait-ontology
-an example how to map grin scrape into trait ontology using nomer
+An example how to map [Samara](https://github.com/jhpoelen/samara)'s grin scrape into trait ontology using [nomer](https://github.com/globalbioticinteractions/nomer) (also see [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1158053.svg)](https://doi.org/10.5281/zenodo.1158053)).
 
 # prerequisites 
 
@@ -38,6 +38,15 @@ GRINTaxon:300359    Medicago sativa L. subsp. sativa    NCBITaxon:3879  GRINDesc
 ```
 
 The file ```output/grin-small-mapped.tsv``` should have been regenerated.
+
+The mapped terms are appended to the end of each row. In this example, this looks like:
+
+```
+verbatim_taxon_id   verbatim_taxon_name [snip] NONE    descriptor_id   descriptor_name         
+GRINTaxon:300359    Medicago sativa L. subsp. sativa    [snip] SAME_AS TO:0000658  days to slik            days to slik                            
+GRINTaxon:300359    Medicago sativa L. subsp. sativa    [snip] NONE    GRINDesc:68102  Crude protein in the leaf           
+```
+Note that in this case, the header is also matched, leaving a NONE match type followed by original matched id/name pair. 
 
 ## big run 
 
