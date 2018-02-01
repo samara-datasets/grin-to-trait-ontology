@@ -1,7 +1,7 @@
 # grin-to-trait-ontology
 an example how to map grin scrape into trait ontology using nomer
 
-# prequisites 
+# prerequisites 
 
 1. some linux / commandline 
 2. internet connection for running "big" mapping
