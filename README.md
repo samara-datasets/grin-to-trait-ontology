@@ -11,10 +11,10 @@ an example how to map grin scrape into trait ontology using nomer
 
 ## test run
 
-First try a test run by executing ```bash map_small.sh```. This should provided an output like:
+First try a test run by executing ```bash map-small.sh```. This should provided an output like:
 
 ```
-$ ./map_test.sh 
+$ ./map-test.sh 
 Nomer [version: 0.0.5]
 cleaning cache at [./.nomer]...
 cleaning cache at [./.nomer] done.
@@ -37,12 +37,12 @@ GRINTaxon:300359    Medicago sativa L. subsp. sativa    NCBITaxon:3879  GRINDesc
 GRINTaxon:300359    Medicago sativa L. subsp. sativa    NCBITaxon:3879  GRINDesc:68102  Crude protein in the leaf   Crude protein in the leaf.  GRINMethod:490600   ALFALFA.1989.BARNES 29.4    GRINAccess:1140225  PI 162787   'PAMPA' Argentina   D.Z. Skinner. 1999. Non random chloroplast DNA hypervariability in Medicago sativa. Theor Appl Genet Theoretical and applied genetics; international journal of b.|D.H. Basigalup, D.K. Barnes, and R.E. Stucker. 1995. Development of a Core Collection for Perennial Medicago Plant Introductions. Crop Sci 35:1163-1168. NONE    GRINDesc:68102  Crude protein in the leaf           
 ```
 
-The file ```output/grin_small_mapped.tsv``` should have been regenerated.
+The file ```output/grin-small-mapped.tsv``` should have been regenerated.
 
 ## big run 
 
 After making sure the test works, you can try to run the mapping of all GRIN descriptors using bbop's copy at https://build.berkeleybop.org/view/Planteome/job/extract-grin-traits/ .
 
-Start the mapping by executing ```./map_grin.sh``` all output is piped to stdout, so your commandline should be quite lively. The input (downloaded from bbop) is saved in ```input/grin.tsv.gz``` and the mapped output is in ```output/grin_mapped.tsv.gz``` .
+Start the mapping by executing ```./map-grin.sh``` all output is piped to stdout, so your commandline should be quite lively. The input (downloaded from bbop) is saved in ```input/grin.tsv.gz``` and the mapped output is in ```output/grin-mapped.tsv.gz``` .
 
-You can have a look at the first 10 lines of the result by doing something like ```cat output/grin_mapped.tsv.gz | head -n 11```.
+You can have a look at the first 10 lines of the result by doing something like ```cat output/grin-mapped.tsv.gz | head -n 11```.
